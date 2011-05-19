@@ -13,3 +13,5 @@
 .DS_Store
 .ropeproject
 ID
+/scons.py
+/SCons/
