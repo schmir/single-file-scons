@@ -69,7 +69,9 @@ def find_module(name, path=None):
 
 def load_module(fullname, file, path, desc):
     if desc is importer:
-        return importer.load_module(path)
+        mod = importer.load_module(path)
+        sys.modules[fullname] = mod
+        return mod
     return old_load_module(fullname, file, path, desc)
 
 imp.find_module = find_module
